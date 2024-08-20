@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Jokes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+        }
+
+        .joke {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Want to hear a Singaporean joke?</h1>
+    <div class="joke" id="joke">
+        <p>Click "Next Joke" to see the first joke!</p>
+    </div>
+    <button onclick="showNextJoke()">Next Joke</button>
+</div>
+
+<script>
+    const jokes = [
+        "Why did the chicken cross the road in Singapore? To avoid the ERP charges!",
+        "Why don’t Singaporeans ever get lost? Because they’re always in the loop (the MRT loop, that is)!",
+        "Why did the durian break up with the rambutan? It found someone with more substance.",
+        "What do you call a lazy Singaporean? A Siesta citizen!"
+    ];
+    let currentJokeIndex = 0;
+
+    function showNextJoke() {
+        currentJokeIndex = (currentJokeIndex + 1) % jokes.length;
+        document.getElementById("joke").innerHTML = `<p>${jokes[currentJokeIndex]}</p>`;
+    }
+</script>
+
+</body>
+</html>
