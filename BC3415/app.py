@@ -20,7 +20,7 @@ def financial_QA():
 def makersuite():
     q = request.form.get("q")
     r = palm.generate_text(prompt=q, **model)
-    return(render_template("makersuite.html",r=r.last))
+    return(render_template("makersuite.html",r=r.result))
 
 @app.route("/predcition",methods=["GET","POST"])
 def predcition():
